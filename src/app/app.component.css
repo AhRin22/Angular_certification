@@ -1,0 +1,17 @@
+.box{
+    margin-block-start: 30px;
+    background-color:#dee2e6;
+    border-radius:10px;
+    padding: 5px;
+    
+}
+
+.btn-button {
+    color: #fff;
+    background-color: #016EC7;
+    border-color: #3e80b6;
+}
+.btn-button:hover{
+    background: #3e8ccc;
+    color: #fff;
+}

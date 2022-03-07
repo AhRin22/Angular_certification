@@ -1,0 +1,26 @@
+<div class="container box">   
+    <div class="card" >
+      <div class="card-header">
+         <h3> 5-day forecast for {{location.name}} {{location.zip}} {{location.country}}</h3>
+       </div>
+        <ul  *ngFor="let weather of weathers" class="list-group">
+          <li class="list-group-item">
+            <div class="row align-items-center">
+              <div class="col-md-5 col align-self-center">
+                {{weather.date |date: 'EEEE, MMMM d' }}: 
+                {{weather.description}}
+                - Min: {{weather.minTemp}}
+               - Max: {{weather.maxTemp}}
+              </div>
+              <div class="col-md-5 col align-self-center">
+                <img class="icon" src={{weather.iconImage}}  >
+              </div>  
+            </div>
+          </li>
+        </ul>
+     </div>
+     <br>
+    <button class="btn btn-button" (click)="backToMain()">&lt; Back to main page</button>
+</div> 
+  
+  

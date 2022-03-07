@@ -1,0 +1,26 @@
+<div class="container box">
+    <div  class="row" >
+      <div class="col">
+              <h3>{{location.name}} {{location.zip}} {{location.country}}</h3>
+              <h4>Current conditions:{{weather.description}}</h4>
+              <h4>Temperatures today:</h4>
+              <p>
+                Current {{weather.currentTemp}}
+                - Max {{weather.maxTemp}}
+                - Min {{weather.minTemp}}
+              </p>
+              <p>
+                <a [routerLink]="['/forecast',zipcode]" >Show 5-day forecast for {{location.name}}</a>
+              </p>
+             
+      </div>
+      <div class="col align-self-center ">
+           <img src={{weather.iconImage}} >
+      </div>
+      
+      <button type="button" class="btn-close"  aria-label="Close"
+            (click)="deleteLocation(zipcode)">
+      </button> 
+      
+    </div>
+  </div>

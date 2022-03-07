@@ -1,0 +1,37 @@
+<ng-template #error let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title"  >Invalid Zipcode</h4>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <p class="modal-title" > Please enter a valid zipcode </p>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-button" (click)="clearInput();modal.close()">OK</button>
+    </div>
+  </ng-template>
+  
+  
+<div class="container  box">
+       <form #addLocationForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="zipcode"><h3>Enter a zipcode:</h3></label>
+            <br><br>
+            <input type="zipcode" id="zipcode" placeholder="Zipcode,country (default:us)" ngModel name="zipcode" required
+              class="form-control" #zipcode="ngModel">
+            <span class="help-block" *ngIf="!zipcode.valid && zipcode.touched">Please enter a zipcode</span>
+            </div>
+            <br><br>
+           <button [disabled]="!addLocationForm.valid" class="btn btn-button"  type="submit">Add location</button>
+       </form>
+</div>
+  
+  <app-weather *ngFor="let location of locations" 
+                   [zipcode]="location" 
+  ></app-weather>
+  
+   
+  
